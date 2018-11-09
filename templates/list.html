@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block body_block %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<div class="container">
+<div class="jumbotron">
+  <h2>Student Details</h2>
+  <p>List of Students in the Table</p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+          <th>Course</th>
+        <th>City</th>
+        <th>Mode of payment</th>
+           <th>Fees</th>
+        <th>Fees date</th>
+          <th>IdCard/PaymentReceipt</th>
+
+      </tr>
+    </thead>
+      {% for x in student_list %}
+    <tbody>
+      <td>{{ x.name }}</td>
+        <td>{{ x.email }}</td>
+        <td>{{ x.mobile }}</td>
+    <td>{{ x.course }}</td>
+        <td>{{ x.city }}</td>
+        <td>{{ x.mode_of_payment}}</td>
+       <td>{{ x.fees }}</td>
+        <td>{{ x.fees_date }}</td>
+        <td><a href="{{ x.id }}">View</a> </td>
+    </tbody>
+      {% endfor %}
+  </table>
+</div>
+{% include "pagination.html" with page=page_obj %}
+</div>
+
+</body>
+</html>
+{% endblock %}

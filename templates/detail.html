@@ -1,0 +1,140 @@
+
+{% load mathfilters %}
+        {% block body_block %}
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Detail</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        h1{
+
+            text-align: center;
+        }
+        table{
+            margin-top:50px;
+            width: 100%;
+
+
+        }
+        th{
+            border: 2px solid gray;
+
+        }
+        .jumbotron{
+            border: aqua 10px solid;
+            background-color: beige;
+            border-color: blue;
+        }
+        th{
+            padding-left: 30px;
+        }
+        p{
+            text-align: center;
+        }
+
+        table{
+            margin-top: 5px;
+        }
+        #head{
+            margin-top: 5px;
+        }
+        #x{
+            border-style: none;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1 id ="head"><em><u>NetRich IT Solution</u> </em></h1>
+        <p> MIG-230,2nd Floor,Above IDBI Bank,Adj:RS Brother and J S BABU Silk,</p>
+        <p>KPHB Colony,Back side of KPHB Bus Stop, Hyd-072,</p>
+        <p><strong>PH: 040-48555314,9948999521,www.netrich.in</strong></p>
+        <h1>RECEIPT</h1>
+        <div class="t1">
+        <table class="newt">
+            <thead>
+            <th style="border-style: none">Serial No.{{ student.id}}</th>
+            <th id="x" style="text-align: right " >GST Number : 36AA0FN6969Q1ZO </th>
+            </thead>
+        </table>
+            </div>
+
+
+<table>
+  <thead >
+  <th>Name</th>
+  <th>{{ student.name|title }}</th>
+  </thead><br>
+  <thead>
+  <th>Email</th>
+  <th>{{ student.email }}</th>
+  </thead>
+    <thead>
+  <th>Course</th>
+  <th>{{ student.course|title }}</th>
+  </thead>
+
+
+    <thead>
+  <th>Fees</th>
+  <th>{{ student.fees|mul:100|div:118|floatformat:'0' }}</th>
+  </thead>
+    <thead>
+  <th>GST</th>
+  <th>{{ student.fees|mul:18|div:118|floatformat:'0' }}</th>
+  </thead>
+     <thead>
+  <th>Total Received</th>
+  <th>{{ student.fees}}</th>
+  </thead>
+    <thead>
+  <th>Payment Date</th>
+  <th>{{ student.fees_date }}</th>
+  </thead>
+    <thead>
+  <th>Payment Status</th>
+  <th>{{ student.payment_status|title }}</th>
+      <thead>
+  <th>Remaining Fess</th>
+  <th>{{ student.remaining_fees|mul:100|div:118|floatformat:'0'}}</th>
+  </thead>
+    <thead>
+  <th> Remaining GST</th>
+  <th>{{ student.remaining_fees|mul:18|div:118|floatformat:'0'}}</th>
+  </thead>
+    <thead>
+  <th> Total Remaining Amount</th>
+  <th>{{ student.remaining_fees }}</th>
+  </thead>
+
+    <thead>
+  <th>Remaining Fees Date (Expected/Paid)</th>
+  <th>{{ student.remaining_fees_date }}</th>
+  </thead>
+</table>
+</table><br><br>
+<h5 style="text-align: right">Authorised Signature with Seal</h5><br>
+        <h2>Terms and Conditions :</h2>
+<ol>
+    <li>Organization reserves the right to expand any student during the training period.</li>
+    <li>Fees once paid will not be refunded or adjusted against other course/batches/student under any circumstances whatsoever.</li>
+    <li>Student should always carry their id card with them and shall produce the same as and when requested.</li>
+    <li>Once the batch is allotted it will be permanent and no shifting will be entertained.</li>
+    <li>in case,a student fails to attend the given batch the amount given will be forfeited against his/her name.</li>
+    <li>Payment of cheques are subject to realization.</li>
+    <li>Vehicle are kept at owner risk.</li>
+    <li>Any discrepancies are subjected to Hyderabad Jurisdiction.</li>
+</ol>
+</div>
+</div>
+</body>
+</html>
+{% endblock %}
